@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <tab id="lotsofpixels" translate="label" sortOrder="9999" class="style-lotsofpixels">
+            <label>Lotsofpixels</label></tab>
+        <section id="inventoryreservation" translate="label" sortOrder="20" showInDefault="1" showInWebsite="0" showInStore="0">
+            <label>Clean Inventory Reservation</label>
+            <tab>lotsofpixels</tab>
+            <resource>Lotsofpixels_Cleanstockreservation::config</resource>
+            <group id="configurable_cron" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="0">
+            <label>Cron Settings</label>
+            <field id="frequency" translate="label" type="select" sortOrder="1" showInDefault="1" showInWebsite="0" showInStore="0">
+                <label>Frequency</label>
+                <source_model>Magento\Cron\Model\Config\Source\Frequency</source_model>
+                <backend_model>Lotsofpixels\CleanStockReservation\Model\Config\Cronconfig</backend_model>
+            </field>
+            <field id="time" translate="label comment" sortOrder="2" type="time" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Start Time</label>
+            </field>
+            </group>
+        </section>
+    </system>
+</config>
